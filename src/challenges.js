@@ -5,9 +5,7 @@ const compareTrue = (bool1, bool2) => (bool1 && bool2);
 const calcArea = (base, height) => (base * height) / 2;
 
 // Desafio 3
-function splitSentence() {
-  // seu código aqui
-}
+const splitSentence = (phrase) => phrase.split(' ');
 
 // Desafio 4
 function concatName() {
@@ -62,4 +60,4 @@ module.exports = {
 };
 
 // Teste
-// console.log(compareTrue(true, true));
+// console.log(splitSentence('foguete'));
