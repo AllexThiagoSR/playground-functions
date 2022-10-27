@@ -1,10 +1,8 @@
 // Desafio 1
-const compareTrue = (bool1, bool2) => bool1 && bool2 ? true : false;
+const compareTrue = (bool1, bool2) => (bool1 && bool2);
 
 // Desafio 2
-function calcArea() {
-  // seu código aqui
-}
+const calcArea = (base, height) => (base * height) / 2;
 
 // Desafio 3
 function splitSentence() {
@@ -64,4 +62,4 @@ module.exports = {
 };
 
 // Teste
-// console.log(compareTrue(false, true));
+// console.log(compareTrue(true, true));
