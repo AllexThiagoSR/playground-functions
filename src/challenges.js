@@ -8,9 +8,7 @@ const calcArea = (base, height) => (base * height) / 2;
 const splitSentence = (phrase) => phrase.split(' ');
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
-}
+const concatName = (stringsArray) => `${stringsArray[stringsArray.length - 1]}, ${stringsArray[0]}`;
 
 // Desafio 5
 function footballPoints() {
@@ -60,4 +58,4 @@ module.exports = {
 };
 
 // Teste
-// console.log(splitSentence('foguete'));
+// console.log(concatName(['captain', 'my', 'captain']));
