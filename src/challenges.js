@@ -14,9 +14,27 @@ const concatName = (stringsArray) => `${stringsArray[stringsArray.length - 1]}, 
 const footballPoints = (wins, ties) => wins * 3 + ties;
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
-}
+const biggestNumber = (numbersArray) => {
+  let biggest;
+
+  for (let index in numbersArray) {
+    if (Number(index) === 0 || numbersArray[index] > biggest) {
+      biggest = numbersArray[index];
+    }
+  }
+  return biggest;
+};
+
+const highestCount = (numbersArray) => {
+  let biggest = biggestNumber(numbersArray);
+  let count = 0;
+
+  for (let num of numbersArray) {
+    count += num === biggest ? 1 : 0;
+  }
+
+  return count;
+};
 
 // Desafio 7
 function catAndMouse() {
@@ -56,4 +74,4 @@ module.exports = {
 };
 
 // Teste
-// console.log(footballPoints(0,));
+console.log(highestCount([0, 0, 0]));
