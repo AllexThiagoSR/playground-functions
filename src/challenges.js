@@ -1,8 +1,5 @@
 // Desafio 1
-function compareTrue() {
-  // seu código aqui
-  //Para criar PR
-}
+const compareTrue = (bool1, bool2) => bool1 && bool2 ? true : false;
 
 // Desafio 2
 function calcArea() {
@@ -65,3 +62,6 @@ module.exports = {
   splitSentence,
   techList,
 };
+
+// Teste
+// console.log(compareTrue(false, true));
