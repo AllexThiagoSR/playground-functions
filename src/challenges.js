@@ -11,9 +11,7 @@ const splitSentence = (phrase) => phrase.split(' ');
 const concatName = (stringsArray) => `${stringsArray[stringsArray.length - 1]}, ${stringsArray[0]}`;
 
 // Desafio 5
-function footballPoints() {
-  // seu código aqui
-}
+const footballPoints = (wins, ties) => wins * 3 + ties;
 
 // Desafio 6
 function highestCount() {
@@ -58,4 +56,4 @@ module.exports = {
 };
 
 // Teste
-// console.log(concatName(['captain', 'my', 'captain']));
+// console.log(footballPoints(0,));
