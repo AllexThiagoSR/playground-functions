@@ -37,8 +37,25 @@ const highestCount = (numbersArray) => {
 };
 
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+const catAndMouse = (mouse, cat1, cat2) => {
+  let returnString;
+  cat1 -= mouse;
+  cat2 -= mouse;
+
+  if (cat1 < 0) {
+    cat1 *= (-1);
+  }
+  if(cat2 < 0) {
+    cat2 *= (-1);
+  }
+  if (cat1 > cat2) {
+    returnString = 'cat2';
+  } else if (cat1 === cat2) {
+    returnString = 'os gatos trombam e o rato foge';
+  } else if (cat1 < cat2) {
+    returnString = 'cat1';
+  }
+  return returnString;
 }
 
 // Desafio 8
@@ -74,4 +91,4 @@ module.exports = {
 };
 
 // Teste
-console.log(highestCount([0, 0, 0]));
+// console.log(catAndMouse(0, 3, 3));
