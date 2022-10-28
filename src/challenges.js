@@ -41,11 +41,10 @@ const catAndMouse = (mouse, cat1, cat2) => {
   let returnString;
   cat1 -= mouse;
   cat2 -= mouse;
-
   if (cat1 < 0) {
     cat1 *= (-1);
   }
-  if(cat2 < 0) {
+  if (cat2 < 0) {
     cat2 *= (-1);
   }
   if (cat1 > cat2) {
@@ -56,11 +55,24 @@ const catAndMouse = (mouse, cat1, cat2) => {
     returnString = 'cat1';
   }
   return returnString;
-}
+};
 
 // Desafio 8
-function fizzBuzz() {
-  // seu código aqui
+function fizzBuzz(arrayNumbers) {
+  let returnArray = [];
+  for (let num of arrayNumbers) {
+    if (num % 3 === 0 && num % 5 === 0) {
+      returnArray.push('fizzBuzz');
+    } else if (num % 3 === 0 && num % 5 !== 0) {
+      returnArray.push('fizz');
+    } else if (num % 5 === 0 && num % 3 !== 0) {
+      returnArray.push('buzz');
+    } else {
+      returnArray.push('bug!');
+    }
+  }
+
+  return returnArray;
 }
 
 // Desafio 9
@@ -91,4 +103,4 @@ module.exports = {
 };
 
 // Teste
-// console.log(catAndMouse(0, 3, 3));
+console.log(fizzBuzz([2, 15, 7, 9, 45]));
