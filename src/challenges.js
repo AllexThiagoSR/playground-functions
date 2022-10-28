@@ -51,7 +51,7 @@ const catAndMouse = (mouse, cat1, cat2) => {
     returnString = 'cat2';
   } else if (cat1 === cat2) {
     returnString = 'os gatos trombam e o rato foge';
-  } else if (cat1 < cat2) {
+  } else {
     returnString = 'cat1';
   }
   return returnString;
@@ -60,12 +60,13 @@ const catAndMouse = (mouse, cat1, cat2) => {
 // Desafio 8
 function fizzBuzz(arrayNumbers) {
   let returnArray = [];
+
   for (let num of arrayNumbers) {
     if (num % 3 === 0 && num % 5 === 0) {
       returnArray.push('fizzBuzz');
-    } else if (num % 3 === 0 && num % 5 !== 0) {
+    } else if (num % 3 === 0) {
       returnArray.push('fizz');
-    } else if (num % 5 === 0 && num % 3 !== 0) {
+    } else if (num % 5 === 0) {
       returnArray.push('buzz');
     } else {
       returnArray.push('bug!');
@@ -77,14 +78,12 @@ function fizzBuzz(arrayNumbers) {
 
 // Desafio 9
 const encode = (phrase) => {
-  let encoder = {a:1, e:2, i: 3, o: 4, u: 5};
+  let encoder = { a: 1, e: 2, i: 3, o: 4, u: 5 };
 
-  for(let index in phrase){
-    let letter = phrase[index]
-    for (key in encoder) {
-      let number = `${encoder[key]}`
-      if(phrase[index] === key){
-        phrase = phrase.replace(letter, number);
+  for (let index in phrase) {
+    for (let key in encoder) {
+      if (phrase[index] === key) {
+        phrase = phrase.replace(phrase[index], encoder[key]);
         break;
       }
     }
@@ -93,14 +92,14 @@ const encode = (phrase) => {
 };
 
 const decode = (phrase) => {
-  let decoder = {'1': 'a', '2': 'e', '3': 'i', '4': 'o', '5': 'u'};
+  let decoder = { 1: 'a', 2: 'e', 3: 'i', 4: 'o', 5: 'u' };
 
-  for(let index in phrase){
+  for (let index in phrase) {
     let number = phrase[index];
-    for(let key in decoder){
+    for (let key in decoder){ 
       let letter = decoder[key];
-      if(key === number){
-        phrase = phrase.replace(number, letter)
+      if( key === number) {
+        phrase = phrase.replace(number, letter);
       }
     }
   }
@@ -112,14 +111,14 @@ const techList = (arrayTech, name) => {
   const returnArray = [];
   arrayTech = arrayTech.sort();
 
-  if (arrayTech === undefined || arrayTech.length === 0){
+  if (arrayTech === undefined || arrayTech.length === 0) {
     return 'Vazio!';
   }
   for (let techStr of arrayTech) {
     returnArray.push({
-      'tech': techStr,
-      'name': name
-    })
+      tech: techStr,
+      name: name, 
+    });
   }
   return returnArray;
 };
