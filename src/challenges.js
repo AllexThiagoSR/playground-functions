@@ -76,12 +76,36 @@ function fizzBuzz(arrayNumbers) {
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
-}
-function decode() {
-  // seu código aqui
-}
+const encode = (phrase) => {
+  let encoder = {a:1, e:2, i: 3, o: 4, u: 5};
+
+  for(let index in phrase){
+    let letter = phrase[index]
+    for (key in encoder) {
+      let number = `${encoder[key]}`
+      if(phrase[index] === key){
+        phrase = phrase.replace(letter, number);
+        break;
+      }
+    }
+  }
+  return phrase;
+};
+
+const decode = (phrase) => {
+  let decoder = {'1': 'a', '2': 'e', '3': 'i', '4': 'o', '5': 'u'};
+
+  for(let index in phrase){
+    let number = phrase[index];
+    for(let key in decoder){
+      let letter = decoder[key];
+      if(key === number){
+        phrase = phrase.replace(number, letter)
+      }
+    }
+  }
+  return phrase;
+};
 
 // Desafio 10
 function techList() {
@@ -103,4 +127,4 @@ module.exports = {
 };
 
 // Teste
-console.log(fizzBuzz([2, 15, 7, 9, 45]));
+// console.log(encode('hi there!'));
