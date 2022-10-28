@@ -42,8 +42,21 @@ function generatePhoneNumber(phoneArray) {
 }
 
 // Desafio 12
-function triangleCheck() {
-  // seu código aqui
+const checkFirstCondition = (a ,b ,c) => {
+  const returnArray = [];
+  returnArray.push((a < b + c) && (a > Math.abs(b - c)));
+  returnArray.push((b < a + c) && (b > Math.abs(a - c)));
+  returnArray.push((c < a + b) && (c > Math.abs(a - b)));
+  return returnArray;
+};
+
+function triangleCheck(lineA, lineB, lineC) {
+  const check = checkFirstCondition(lineA, lineB, lineC);
+
+  if (check[0] && check[1] && check[2]) {
+    return true;
+  }
+  return false;
 }
 
 // Desafio 13
