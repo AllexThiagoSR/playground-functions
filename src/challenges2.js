@@ -26,7 +26,7 @@ const checkRepetitions = (array) => {
   return false;
 };
 
-function generatePhoneNumber(phoneArray) {
+const generatePhoneNumber = (phoneArray) => {
   let returnString = `(${phoneArray[0]}${phoneArray[1]}) `;
   let check = iteratesOver(phoneArray, 0, phoneArray.length - 1);
 
@@ -50,7 +50,7 @@ const checkFirstCondition = (a ,b ,c) => {
   return returnArray;
 };
 
-function triangleCheck(lineA, lineB, lineC) {
+const triangleCheck = (lineA, lineB, lineC) => {
   const check = checkFirstCondition(lineA, lineB, lineC);
 
   if (check[0] && check[1] && check[2]) {
@@ -60,9 +60,29 @@ function triangleCheck(lineA, lineB, lineC) {
 }
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
-}
+const hydrate = (str) => {
+  let cupsOfWater = 0;
+
+  for(let value of numbersInString(str)){
+    cupsOfWater += value;
+  }
+  return cupsOfWater > 1 ? `${cupsOfWater} copos de água` : `${cupsOfWater} copo de água`;
+};
+
+const numbersInString = (str) => {
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const stringNumbers = [];
+
+  for (let word of str.split(' ')) {
+    for(let num of numbers){
+      if (Number(word) === num) {
+        stringNumbers.push(Number(word));
+        break;
+      }
+    }
+  }
+  return stringNumbers;
+};
 
 module.exports = {
   generatePhoneNumber,
