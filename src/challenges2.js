@@ -38,7 +38,6 @@ function generatePhoneNumber(phoneArray) {
   returnString += iteratesOver(phoneArray, 2, 6);
   returnString += '-';
   returnString += iteratesOver(phoneArray, 7, phoneArray.length - 1);
-  
   return returnString;
 }
 
