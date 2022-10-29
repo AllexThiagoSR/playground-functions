@@ -62,11 +62,13 @@ function fizzBuzz(arrayNumbers) {
   let returnArray = [];
 
   for (let num of arrayNumbers) {
-    if (num % 3 === 0 && num % 5 === 0) {
+    let div3 = num % 3;
+    let div5 = num % 5;
+    if (div3 === 0 && div5 === 0) {
       returnArray.push('fizzBuzz');
-    } else if (num % 3 === 0) {
+    } else if (div3 === 0) {
       returnArray.push('fizz');
-    } else if (num % 5 === 0) {
+    } else if (div5 === 0) {
       returnArray.push('buzz');
     } else {
       returnArray.push('bug!');
@@ -80,7 +82,7 @@ function fizzBuzz(arrayNumbers) {
 const encode = (phrase) => {
   let encoder = { a: 1, e: 2, i: 3, o: 4, u: 5 };
 
-  for (let index in phrase) {
+  for (let index = 0; index < phrase.length; index += 1) {
     for (let key in encoder) {
       if (phrase[index] === key) {
         phrase = phrase.replace(phrase[index], encoder[key]);
@@ -94,12 +96,10 @@ const encode = (phrase) => {
 const decode = (phrase) => {
   let decoder = { 1: 'a', 2: 'e', 3: 'i', 4: 'o', 5: 'u' };
 
-  for (let index in phrase) {
-    let number = phrase[index];
-    for (let key in decoder){ 
-      let letter = decoder[key];
-      if( key === number) {
-        phrase = phrase.replace(number, letter);
+  for (let index = 0; index < phrase.length; index += 1) {
+    for (let key in decoder) {
+      if (key === phrase[index]) {
+        phrase = phrase.replace(phrase[index], decoder[key]);
       }
     }
   }
@@ -115,10 +115,7 @@ const techList = (arrayTech, name) => {
     return 'Vazio!';
   }
   for (let techStr of arrayTech) {
-    returnArray.push({
-      tech: techStr,
-      name: name, 
-    });
+    returnArray.push({ tech: techStr, name });
   }
   return returnArray;
 };
