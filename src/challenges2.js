@@ -9,7 +9,7 @@ const iteratesOver = (array, start, end, ) => {
     returnString += array[index];
   }
   return returnString;
-}
+};
 
 const checkRepetitions = (array) => {
   for (let i in array) {
@@ -39,7 +39,7 @@ const generatePhoneNumber = (phoneArray) => {
   returnString += '-';
   returnString += iteratesOver(phoneArray, 7, phoneArray.length - 1);
   return returnString;
-}
+};
 
 // Desafio 12
 const checkFirstCondition = (a ,b ,c) => {
@@ -57,7 +57,7 @@ const triangleCheck = (lineA, lineB, lineC) => {
     return true;
   }
   return false;
-}
+};
 
 // Desafio 13
 const hydrate = (str) => {
