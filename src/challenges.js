@@ -80,28 +80,21 @@ function fizzBuzz(arrayNumbers) {
 
 // Desafio 9
 const encode = (phrase) => {
-  let encoder = { a: 1, e: 2, i: 3, o: 4, u: 5 };
-
-  for (let index = 0; index < phrase.length; index += 1) {
-    for (let key in encoder) {
-      if (phrase[index] === key) {
-        phrase = phrase.replace(phrase[index], encoder[key]);
-        break;
-      }
-    }
+  let encoder = ['a', 'e', 'i', 'o', 'u'];
+  
+  for (let index = 0; index < encoder.length; index += 1) {
+    const regLet = new RegExp(`${encoder[index]}`, 'g');
+    phrase = phrase.replace(regLet, `${index + 1}`);
   }
   return phrase;
 };
 
 const decode = (phrase) => {
-  let decoder = { 1: 'a', 2: 'e', 3: 'i', 4: 'o', 5: 'u' };
+  let decoder = ['a', 'e', 'i', 'o', 'u'];
 
-  for (let index = 0; index < phrase.length; index += 1) {
-    for (let key in decoder) {
-      if (key === phrase[index]) {
-        phrase = phrase.replace(phrase[index], decoder[key]);
-      }
-    }
+  for (let index = 0; index < decoder.length; index += 1) {
+    const regNum = new RegExp(`${index + 1}`, 'g');
+    phrase = phrase.replace(regNum, decoder[index]);
   }
   return phrase;
 };
