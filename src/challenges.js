@@ -61,7 +61,7 @@ const catAndMouse = (mouse, cat1, cat2) => {
 function fizzBuzz(arrayNumbers) {
   let returnArray = [];
 
-  for (let num of arrayNumbers) {
+  arrayNumbers.forEach((num) => {
     let div3 = num % 3;
     let div5 = num % 5;
     if (div3 === 0 && div5 === 0) {
@@ -73,15 +73,14 @@ function fizzBuzz(arrayNumbers) {
     } else {
       returnArray.push('bug!');
     }
-  }
-
+  });
   return returnArray;
 }
 
 // Desafio 9
 const encode = (phrase) => {
   let encoder = ['a', 'e', 'i', 'o', 'u'];
-  
+
   for (let index = 0; index < encoder.length; index += 1) {
     const regLet = new RegExp(`${encoder[index]}`, 'g');
     phrase = phrase.replace(regLet, `${index + 1}`);
