@@ -1,17 +1,16 @@
 // Desafio 11
 const checkRepetitions = (array) => {
-  for (let i of array) {
+  let boolReturn = false;
+  array.forEach((i) => {
     let count = 0;
-    for (let j of array) {
-      if (i === j) {
-        count += 1;
-      }
-    }
+    array.forEach((j) => {
+      if (j === i) count += 1;
+    });
     if (count >= 3) {
-      return true;
+      boolReturn = true;
     }
-  }
-  return false;
+  });
+  return boolReturn;
 };
 
 const iteratesOver = (array, start, end) => {
