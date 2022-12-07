@@ -6,9 +6,7 @@ const checkRepetitions = (array) => {
     array.forEach((j) => {
       if (j === i) count += 1;
     });
-    if (count >= 3) {
-      boolReturn = true;
-    }
+    if (count >= 3) boolReturn = true;
   });
   return boolReturn;
 };
